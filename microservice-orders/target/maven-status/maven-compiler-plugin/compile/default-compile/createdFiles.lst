@@ -1,0 +1,8 @@
+com\jegeap\service\OrderServiceImpl.class
+com\jegeap\service\OrderService.class
+com\jegeap\MicroserviceOrdersApplication.class
+com\jegeap\repository\OrderRepository.class
+com\jegeap\service\OrderServiceRestTemplate.class
+com\jegeap\client\ProductClient.class
+com\jegeap\controller\OrderController.class
+com\jegeap\util\OrderStatusEnum.class
