@@ -26,20 +26,18 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	@CircuitBreaker(name = "products", fallbackMethod = "fallbackSearchProduct")
 	public Product searchProduct(Long id) throws Exception {
-		if(id != 1) Thread.sleep(3000);
 		return repository.findById(id).orElse(new Product());
 	}
 
 	@Override
 	@CircuitBreaker(name = "products", fallbackMethod = "fallbackExistProduct")
 	public boolean existProduct(Long id) throws Exception {
-		if(id != 1) Thread.sleep(3000);
 		return repository.existsById(id);
 	}
 	
 	@SuppressWarnings("unused")
 	private List<Product> fallbackGetAll(Throwable ex) {
-		System.out.println("fallback reach caused by -> º"+ ex);
+		System.out.println("fallback reach caused by -> "+ ex);
 		return Collections.emptyList();
 	}
 	

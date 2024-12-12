@@ -25,29 +25,49 @@ public class ProductController {
 	private ProductService service;
 	
 	@GetMapping("/list")
-	public ResponseEntity<List<Product>> getAll() throws Exception {
-		List<Product> products = service.getAll().stream()
-		.map(prod -> {
-			prod.setPort(request.getLocalPort());
-			return prod;
-		}).collect(Collectors.toList());
-		
-		return new ResponseEntity<List<Product>>(products, 
-				!products.isEmpty() ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+	public ResponseEntity<List<Product>> getAll()  {
+		List<Product> products;
+		try {
+			products = service.getAll().stream()
+			.map(prod -> {
+				prod.setPort(request.getLocalPort());
+				return prod;
+			}).collect(Collectors.toList());
+			
+			return new ResponseEntity<List<Product>>(products, 
+					!products.isEmpty() ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<List<Product>>(HttpStatus.BAD_REQUEST);
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Product> getOneByProductId(@PathVariable Long id) throws Exception {
-		Product product = service.searchProduct(id);
-		product.setPort(request.getLocalPort());
-		return ResponseEntity.ok(service.searchProduct(id));
+	public ResponseEntity<Product> getOneByProductId(@PathVariable Long id) {
+		Product product;
+		try {
+			product = service.searchProduct(id);
+			product.setPort(request.getLocalPort());
+			
+			return ResponseEntity.ok(service.searchProduct(id));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Product>(HttpStatus.BAD_REQUEST);
 	}
 	
 	@GetMapping("/exist/{id}")
-	public ResponseEntity<Boolean> existProduct(@PathVariable Long id) throws Exception {
-		boolean existsProduct = service.existProduct(id);
-		return new ResponseEntity<Boolean>(existsProduct, 
-				existsProduct ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+	public ResponseEntity<Boolean> existProduct(@PathVariable Long id) {
+		boolean existsProduct;
+		try {
+			existsProduct = service.existProduct(id);
+			
+			return new ResponseEntity<Boolean>(existsProduct, 
+					existsProduct ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Boolean>(HttpStatus.BAD_REQUEST);
 	}
 	
 }
