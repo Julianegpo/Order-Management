@@ -142,3 +142,4 @@ microservice-orders/target/classes/META-INF/maven/com.jegeap/microservice-orders
 microservice-products/target/classes/META-INF/maven/com.jegeap/microservice-products/pom.properties
 shared-commons/target/classes/META-INF/maven/com.jegeap/shared-commons/pom.properties
 microservice-gateway/target/classes/META-INF/maven/com.jegeap/microservice-gateway/pom.properties
+/eureka-server/target
