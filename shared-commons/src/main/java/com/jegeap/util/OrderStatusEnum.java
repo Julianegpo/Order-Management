@@ -5,6 +5,10 @@ public enum OrderStatusEnum {
 	CREATED,
 	SHIPPED,
 	COMPLETED,
-	CANCELLED
+	CANCELLED;
+	
+	public static String asString(OrderStatusEnum status) {
+        return status != null ? status.toString() : "UNKNOWN";
+    }	
 	
 }

@@ -11,8 +11,9 @@ public interface ProductClient {
 
 	@GetMapping("/list")
 	public Product getAll();
-	
 	@GetMapping("/{id}")
 	public Product getOneByProductId(@PathVariable Long id);
+	@GetMapping("/exist/{id}")
+	public boolean existProduct(@PathVariable Long id);
 	
 }

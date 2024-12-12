@@ -1,3 +1,11 @@
-C:\dev\workspace\orders-management\shared-commons\src\main\java\com\jegeap\model\Order.java
-C:\dev\workspace\orders-management\shared-commons\src\main\java\com\jegeap\util\OrderStatusEnum.java
-C:\dev\workspace\orders-management\shared-commons\src\main\java\com\jegeap\model\Product.java
+C:\dev\workspace\Order-Management\shared-commons\src\main\java\com\jegeap\dto\OrderDTO.java
+C:\dev\workspace\Order-Management\shared-commons\src\main\java\com\jegeap\mapper\OrderMapper.java
+C:\dev\workspace\Order-Management\shared-commons\src\main\java\com\jegeap\model\Product.java
+C:\dev\workspace\Order-Management\shared-commons\src\main\java\com\jegeap\constants\AppConstants.java
+C:\dev\workspace\Order-Management\shared-commons\src\main\java\com\jegeap\mapper\ProductMapper.java
+C:\dev\workspace\Order-Management\shared-commons\src\main\java\com\jegeap\dto\UserDTO.java
+C:\dev\workspace\Order-Management\shared-commons\src\main\java\com\jegeap\util\OrderStatusEnum.java
+C:\dev\workspace\Order-Management\shared-commons\src\main\java\com\jegeap\dto\ProductDTO.java
+C:\dev\workspace\Order-Management\shared-commons\src\main\java\com\jegeap\model\User.java
+C:\dev\workspace\Order-Management\shared-commons\src\main\java\com\jegeap\model\Order.java
+C:\dev\workspace\Order-Management\shared-commons\src\main\java\com\jegeap\mapper\UserMapper.java

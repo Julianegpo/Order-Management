@@ -15,7 +15,7 @@ public class MicroserviceOrdersApplication {
 
 	@Bean
 	@LoadBalanced
-	// TODO: si eliminamo esto, OpenFeign sera capaz de acceder al servicio de productos?
+	// TODO: si eliminamos esto, OpenFeign sera capaz de acceder al servicio de productos?
 	RestTemplate restTemplate() {
 		return new RestTemplate();
 	}

@@ -1,5 +1,6 @@
 package com.jegeap.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -15,8 +16,10 @@ import com.jegeap.util.OrderStatusEnum;
 
 @Entity
 @Table(name="ORDERS")
-public class Order {
-
+public class Order implements Serializable {
+	
+	private static final long serialVersionUID = -585664194565962303L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -26,7 +29,7 @@ public class Order {
 	private int quantity;
 	@Column(name="STATUS")
 	@Enumerated(EnumType.STRING)
-	private OrderStatusEnum status;
+	private OrderStatusEnum status = OrderStatusEnum.CREATED;
 	
 	public Long getId() {
 		return id;

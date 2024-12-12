@@ -20,42 +20,64 @@ public class OrderController {
 	@Autowired
 	private OrderService service;
 	
+	@GetMapping("/{id}")
+	public ResponseEntity<Order> findById(@PathVariable Long id) {
+		Order order;
+		try {
+			order = service.findById(id);
+			return (order != null && order.getId() != null) 
+					? new ResponseEntity<Order>(order, HttpStatus.OK) 
+					: new ResponseEntity<Order>(order, HttpStatus.NOT_FOUND);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Order>(HttpStatus.BAD_REQUEST);
+	}	
+	
 	@PostMapping("/create")
 	public ResponseEntity<Order> createOrder(@RequestBody Order order) {
-		if (order == null || order.getId() == null) {
+		if (order == null) {
 	        return new ResponseEntity<Order>(HttpStatus.BAD_REQUEST);
 	    } else {
-	        return service.createOrder(order) != null 
-	        		? new ResponseEntity<Order>(HttpStatus.CREATED) 
-	        		: new ResponseEntity<Order>(HttpStatus.CONFLICT);
+	        try {
+				return service.createOrder(order) != null 
+						? new ResponseEntity<Order>(order, HttpStatus.CREATED) 
+						: new ResponseEntity<Order>(order, HttpStatus.CONFLICT);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 	    }
-	}
-	
-	@GetMapping("/{id}")
-	public ResponseEntity<Order> getOneByOrderId(@PathVariable Long id) {
-		Order order = service.findById(id);
-		return (order != null && order.getId() != null) 
-				? new ResponseEntity<Order>(order, HttpStatus.OK) 
-				: new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
+		return new ResponseEntity<Order>(HttpStatus.BAD_REQUEST);
 	}
 	
 	@PutMapping("/update/{id}")
 	public ResponseEntity<Order> updateOrder(@PathVariable Long id) {
-		Order order = service.findById(id);
-		if(order == null) {
-			return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
-		} else {
-			return service.updateOrder(order) 
-					? new ResponseEntity<Order>(HttpStatus.OK)
-					: new ResponseEntity<Order>(HttpStatus.CONFLICT);					
+		Order order;
+		try {
+			order = service.findById(id);
+			if(order == null) {
+				return new ResponseEntity<Order>(order, HttpStatus.NOT_FOUND);
+			} else {
+				return service.updateOrder(order) 
+						? new ResponseEntity<Order>(order, HttpStatus.OK)
+								: new ResponseEntity<Order>(order, HttpStatus.CONFLICT);					
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+		return new ResponseEntity<Order>(HttpStatus.BAD_REQUEST);
 	}
 	
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<Order> deleteOrder(@PathVariable Long id) {		
-		return service.deleteOrder(id) == null 
-				? new ResponseEntity<Order>(HttpStatus.OK) 
-				: new ResponseEntity<Order>(HttpStatus.BAD_REQUEST);
+		try {
+			return service.deleteOrder(id)
+					? new ResponseEntity<Order>(HttpStatus.OK) 
+					: new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Order>(HttpStatus.BAD_REQUEST);
 	}
 	
 }
