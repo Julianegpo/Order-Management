@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,24 +25,29 @@ public class ProductController {
 	private ProductService service;
 	
 	@GetMapping("/list")
-	public ResponseEntity<List<Product>> getAll() {
-		return ResponseEntity.ok(
-				service.getAll()
-				.stream()
-				.map(prod -> {
-					//prod.setPort(port);
-					prod.setPort(request.getLocalPort());
-					return prod;
-				}).collect(Collectors.toList())
-				);
+	public ResponseEntity<List<Product>> getAll() throws Exception {
+		List<Product> products = service.getAll().stream()
+		.map(prod -> {
+			prod.setPort(request.getLocalPort());
+			return prod;
+		}).collect(Collectors.toList());
+		
+		return new ResponseEntity<List<Product>>(products, 
+				!products.isEmpty() ? HttpStatus.OK : HttpStatus.NOT_FOUND);
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Product> getOneByProductId(@PathVariable Long id) {
+	public ResponseEntity<Product> getOneByProductId(@PathVariable Long id) throws Exception {
 		Product product = service.searchProduct(id);
 		product.setPort(request.getLocalPort());
 		return ResponseEntity.ok(service.searchProduct(id));
 	}
 	
+	@GetMapping("/exist/{id}")
+	public ResponseEntity<Boolean> existProduct(@PathVariable Long id) throws Exception {
+		boolean existsProduct = service.existProduct(id);
+		return new ResponseEntity<Boolean>(existsProduct, 
+				existsProduct ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+	}
 	
 }
