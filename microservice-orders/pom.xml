@@ -14,7 +14,7 @@
 	<artifactId>microservice-orders</artifactId>
 	<version>1.0.0</version>
 	<name>microservice-orders</name>
-	<description>Demo project for Spring Boot</description>
+	<description>orders management microservice</description>
 	
 	<properties>
 		<java.version>1.8</java.version>

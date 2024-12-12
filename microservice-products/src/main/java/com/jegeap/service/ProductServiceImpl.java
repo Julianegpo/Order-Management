@@ -12,6 +12,7 @@ import com.jegeap.repository.ProductRepository;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
 @Service
+@SuppressWarnings("unused")
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired
@@ -35,19 +36,16 @@ public class ProductServiceImpl implements ProductService {
 		return repository.existsById(id);
 	}
 	
-	@SuppressWarnings("unused")
 	private List<Product> fallbackGetAll(Throwable ex) {
 		System.out.println("fallback reach caused by -> "+ ex);
 		return Collections.emptyList();
 	}
 	
-	@SuppressWarnings("unused")
 	private Product fallbackSearchProduct(Long id, Throwable ex) {
 		System.out.println("fallback reach caused by -> "+ ex);
 		return new Product();
-	}
+	}	
 	
-	@SuppressWarnings("unused")
 	private boolean fallbackExistProduct(Long id, Throwable ex) {
 		System.out.println("fallback reach caused by -> "+ ex);
 		return false;

@@ -13,6 +13,8 @@
 	<groupId>com.jegeap</groupId>
 	<artifactId>shared-commons</artifactId>
 	<version>1.0.0</version>
+	<name>shared-commons</name>
+	<description>shared classes for microservices</description>
 	
 	<properties>
 		<java.version>1.8</java.version>

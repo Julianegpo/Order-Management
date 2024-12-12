@@ -14,7 +14,7 @@
 	<artifactId>microservice-gateway</artifactId>
 	<version>1.0.0</version>
 	<name>microservice-gateway</name>
-	<description>Demo project for Spring Boot</description>
+	<description>gateway load balancer</description>
 	
 	<properties>
 		<java.version>1.8</java.version>

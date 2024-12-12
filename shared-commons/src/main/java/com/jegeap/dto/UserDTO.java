@@ -4,7 +4,8 @@ import lombok.Data;
 
 @Data
 @SuppressWarnings("unused")
-public class UserDTO {	
+public class UserDTO {
+	private Long id;
 	private String username;
 	private String password;
 }

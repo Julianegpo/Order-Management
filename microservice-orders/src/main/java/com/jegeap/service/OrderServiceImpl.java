@@ -12,6 +12,7 @@ import com.jegeap.repository.OrderRepository;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
 @Service
+@SuppressWarnings("unused")
 public class OrderServiceImpl implements OrderService {
 	
 	@Autowired
@@ -59,21 +60,17 @@ public class OrderServiceImpl implements OrderService {
 		System.out.println("fallback reach caused by -> "+ ex);
 		return new Order();
 	}
-	
-	@SuppressWarnings("unused")
+
 	private Order fallbackCreateOrder(Order order, Throwable ex) {
 		System.out.println("fallback reach caused by -> "+ ex);
 		return new Order();
 	}
-	
-	
-	@SuppressWarnings("unused")
+
 	private boolean fallbackUpdateOrder(Order order, Throwable ex) {
 		System.out.println("fallback reach caused by -> "+ ex);
 		return false;
 	}
-	
-	@SuppressWarnings("unused")
+
 	private Order fallbackDeleteOrder(Long id, Throwable ex) {
 		System.out.println("fallback reach caused by -> "+ ex);
 		return null;
