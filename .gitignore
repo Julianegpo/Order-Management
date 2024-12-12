@@ -132,3 +132,13 @@ eureka-server/target/classes/META-INF/maven/com.jegeap/eureka-server/pom.propert
 microservice-gateway/target/classes/META-INF/maven/com.jegeap/microservice-gateway/pom.properties
 *.properties
 *.class
+eureka-server/target/classes/META-INF/maven/com.jegeap/eureka-server/pom.properties
+microservice-gateway/target/classes/META-INF/maven/com.jegeap/microservice-gateway/pom.properties
+microservice-orders/target/classes/com/jegeap/client/ProductClient.class
+microservice-orders/target/classes/com/jegeap/MicroserviceOrdersApplication.class
+microservice-orders/target/classes/com/jegeap/service/OrderServiceImpl.class
+microservice-orders/target/classes/com/jegeap/service/OrderServiceRestTemplate.class
+microservice-orders/target/classes/META-INF/maven/com.jegeap/microservice-orders/pom.properties
+microservice-products/target/classes/META-INF/maven/com.jegeap/microservice-products/pom.properties
+shared-commons/target/classes/META-INF/maven/com.jegeap/shared-commons/pom.properties
+microservice-gateway/target/classes/META-INF/maven/com.jegeap/microservice-gateway/pom.properties
