@@ -1,0 +1,1 @@
+insert into USERS (USERNAME, EMAIL, PASSWORD) values ('jegeap', 'test@example.com', '123456qwerty'); 
