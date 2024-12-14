@@ -1,5 +1,0 @@
-com\jegeap\repository\ProductRepository.class
-com\jegeap\MicroserviceProductsApplication.class
-com\jegeap\controller\ProductController.class
-com\jegeap\service\ProductService.class
-com\jegeap\service\ProductServiceImpl.class

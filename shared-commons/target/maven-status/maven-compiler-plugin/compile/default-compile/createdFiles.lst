@@ -1,8 +1,0 @@
-com\jegeap\model\User.class
-com\jegeap\model\Product.class
-com\jegeap\dto\OrderDTO.class
-com\jegeap\constants\AppConstants.class
-com\jegeap\dto\UserDTO.class
-com\jegeap\dto\ProductDTO.class
-com\jegeap\model\Order.class
-com\jegeap\util\OrderStatusEnum.class
