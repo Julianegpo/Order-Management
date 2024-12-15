@@ -31,6 +31,10 @@ public class Order implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private OrderStatusEnum status = OrderStatusEnum.CREATED;
 	
+	public Order() {
+		super();
+	}
+
 	public Order(Long id, Long product, int quantity, OrderStatusEnum status) {
 		super();
 		this.id = id;

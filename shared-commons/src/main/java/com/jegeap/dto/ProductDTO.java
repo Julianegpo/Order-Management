@@ -9,6 +9,10 @@ public class ProductDTO {
 	private String description;
 	private Double price;
 	
+	public ProductDTO() {
+		super();
+	}
+
 	public ProductDTO(Long id, String description, Double price) {
 		super();
 		this.id = id;

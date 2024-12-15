@@ -15,10 +15,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository repository;
 	@Autowired
-	private UserMapper userMapper;
-	
-//	private UserMapper userMapper = Mappers.getMapper(UserMapper.class);
-	
+	private UserMapper userMapper;	
 	
 	@Override
 	@CircuitBreaker(name = "users", fallbackMethod = "fallbackFindByUsername")

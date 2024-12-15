@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name="PRODUCTS")
@@ -24,8 +23,10 @@ public class Product implements Serializable {
 	private String description;
 	@Column(name="PRICE")
 	private Double price;
-	@Transient
-	private Integer port;
+	
+	public Product() {
+		super();
+	}
 	
 	public Product(Long id, String description, Double price) {
 		super();
@@ -51,12 +52,6 @@ public class Product implements Serializable {
 	}
 	public void setPrice(Double price) {
 		this.price = price;
-	}	
-	public Integer getPort() {
-		return port;
-	}
-	public void setPort(Integer port) {
-		this.port = port;
 	}
 	
 	@Override
@@ -79,7 +74,7 @@ public class Product implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", description=" + description + ", price=" + price + ", port=" + port + "]";
+		return "Product [id=" + id + ", description=" + description + ", price=" + price + "]";
 	}
 	
 }

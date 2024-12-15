@@ -12,6 +12,10 @@ public class OrderDTO {
 	private int quantity;
 	private OrderStatusEnum status;
 	
+	public OrderDTO() {
+		super();
+	}
+
 	public OrderDTO(Long id, Long product, int quantity, OrderStatusEnum status) {
 		super();
 		this.id = id;
