@@ -23,18 +23,11 @@ public class AuthController {
     @PostMapping("/token")
     public ResponseEntity<String> login(@RequestBody UserDTO userDTO) {
     	 try {
-             // Obtener el usuario desde el microservicio de usuarios
              UserDTO user = userClient.findByUsername(userDTO.getUsername());
-
-             // Validar la contraseña
-             if (!user.getPassword().equals(user.getPassword())) {
+             if (!user.getPassword().equals(userDTO.getPassword())) {
                  return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
              }
-
-             // Generar el token JWT
              String token = JwtUtil.generateToken(user);
-
-             // Retornar el token
              return ResponseEntity.ok("Bearer " + token);
          } catch (Exception e) {
              return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
