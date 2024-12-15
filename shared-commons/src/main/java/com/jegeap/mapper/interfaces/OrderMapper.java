@@ -1,4 +1,4 @@
-package com.jegeap.mapper;
+package com.jegeap.mapper.interfaces;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

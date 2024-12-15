@@ -27,6 +27,13 @@ public class Product implements Serializable {
 	@Transient
 	private Integer port;
 	
+	public Product(Long id, String description, Double price) {
+		super();
+		this.id = id;
+		this.description = description;
+		this.price = price;
+	}
+	
 	public Long getId() {
 		return id;
 	}

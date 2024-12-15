@@ -13,7 +13,7 @@
 	<artifactId>microservice-users</artifactId>
 	<version>1.0.0</version>
 	<name>microservice-users</name>
-	<description>auth and user management with JWT and Spring Security microservice</description>
+	<description>user management microservice</description>
 	
 	<properties>
 		<java.version>1.8</java.version>
@@ -31,13 +31,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -46,11 +41,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -65,27 +55,6 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
 		</dependency>
-		<!-- JWT (io.jsonwebtoken) -->
-	    <dependency>
-	        <groupId>io.jsonwebtoken</groupId>
-	        <artifactId>jjwt-api</artifactId>
-	        <version>0.11.5</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>io.jsonwebtoken</groupId>
-	        <artifactId>jjwt-impl</artifactId>
-	        <version>0.11.5</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>io.jsonwebtoken</groupId>
-	        <artifactId>jjwt-jackson</artifactId>
-	        <version>0.11.5</version>
-	    </dependency>
-	    <dependency>
-		    <groupId>io.jsonwebtoken</groupId>
-		    <artifactId>jjwt</artifactId>
-		    <version>0.9.1</version>
-		</dependency>
 		<dependency>
 			<groupId>com.jegeap</groupId>
 			<artifactId>shared-commons</artifactId>
@@ -98,6 +67,19 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-compiler-plugin</artifactId>
+			    <configuration>
+			        <annotationProcessorPaths>
+			            <path>
+			                <groupId>org.mapstruct</groupId>
+			                <artifactId>mapstruct-processor</artifactId>
+			                <version>1.6.0.Beta1</version>
+			            </path>
+			        </annotationProcessorPaths>
+			    </configuration>
 			</plugin>
 		</plugins>
 	</build>
