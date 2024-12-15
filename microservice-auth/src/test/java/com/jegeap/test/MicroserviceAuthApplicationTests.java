@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.jegeap.test;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EurekaServerApplicationTests {
+class MicroserviceAuthApplicationTests {
 
 	@Test
 	void contextLoads() {

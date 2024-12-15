@@ -1,10 +1,10 @@
-package com.jegeap;
+package com.jegeap.test;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MicroserviceAuthApplicationTests {
+class MicroserviceOrdersApplicationTests {
 
 	@Test
 	void contextLoads() {
