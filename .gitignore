@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/maven,java,eclipse,windows,macos
-# Edit at https://www.toptal.com/developers/gitignore?templates=maven,java,eclipse,windows,macos
+# Created by https://www.toptal.com/developers/gitignore/api/maven,java,eclipse,visualstudiocode,windows,macos,linux
+# Edit at https://www.toptal.com/developers/gitignore?templates=maven,java,eclipse,visualstudiocode,windows,macos,linux
 
 ### Eclipse ###
 .metadata
@@ -93,6 +93,21 @@ local.properties
 hs_err_pid*
 replay_pid*
 
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
 ### macOS ###
 # General
 .DS_Store
@@ -145,6 +160,25 @@ buildNumber.properties
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -171,5 +205,33 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/maven,java,eclipse,windows,macos
-*.md
+# End of https://www.toptal.com/developers/gitignore/api/maven,java,eclipse,visualstudiocode,windows,macos,linux
+.vscode/launch.json
+.vscode/settings.json
+config/application.properties
+config-server/.gitattributes
+config-server/.gitignore
+config-server/mvnw
+config-server/mvnw.cmd
+config-server/.mvn/wrapper/maven-wrapper.properties
+eureka-server/logs/app.log.2024-12-14.0.gz
+eureka-server/logs/eureka-server.log.2024-12-22.0.gz
+eureka-server/logs/eureka-server.log.2024-12-23.0.gz
+eureka-server/logs/eureka-server.log.2024-12-24.0.gz
+microservice-auth/logs/app.log.2024-12-14.0.gz
+microservice-auth/logs/service-auth.log.2024-12-22.0.gz
+microservice-auth/logs/service-auth.log.2024-12-23.0.gz
+microservice-auth/logs/service-auth.log.2024-12-24.0.gz
+microservice-gateway/logs/app.log.2024-12-14.0.gz
+microservice-gateway/logs/gateway.log.2024-12-24.0.gz
+microservice-gateway/logs/service-gateway.log.2024-12-22.0.gz
+microservice-gateway/logs/service-gateway.log.2024-12-23.0.gz
+microservice-gateway/src/main/java/com/jegeap/filter/request/GlobalRequestFilter.java
+microservice-orders/application.properties
+microservice-orders/src/main/java/com/jegeap/MicroserviceOrdersApplication.java
+microservice-users/HELP.md
+microservice-users/logs/app.log.2024-12-14.0.gz
+microservice-users/logs/service-users.log.2024-12-22.0.gz
+microservice-users/logs/service-users.log.2024-12-23.0.gz
+microservice-users/logs/service-users.log.2024-12-24.0.gz
+microservice-users/src/main/java/com/jegeap/MicroserviceUsersApplication.java
