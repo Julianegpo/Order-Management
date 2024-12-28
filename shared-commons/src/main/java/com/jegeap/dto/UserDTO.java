@@ -2,9 +2,7 @@ package com.jegeap.dto;
 
 import java.util.Objects;
 
-import lombok.Data;
 
-@Data //lombok doesnt work idk why
 public class UserDTO {
 	
 	private Long id;

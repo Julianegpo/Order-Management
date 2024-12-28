@@ -1,8 +1,6 @@
 package com.jegeap.dto;
 
-import lombok.Data;
 
-@Data
 public class ProductDTO {
 	
 	private Long id;

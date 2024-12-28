@@ -2,9 +2,7 @@ package com.jegeap.dto;
 
 import com.jegeap.util.OrderStatusEnum;
 
-import lombok.Data;
 
-@Data
 public class OrderDTO {
 	
 	private Long id;
