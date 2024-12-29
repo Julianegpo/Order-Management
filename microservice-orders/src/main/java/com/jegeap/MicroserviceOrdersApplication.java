@@ -12,13 +12,6 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaClient
 @EnableFeignClients
 public class MicroserviceOrdersApplication {
-
-	@Bean
-	@LoadBalanced
-	// TODO: si eliminamos esto, OpenFeign sera capaz de acceder al servicio de productos?
-	RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
 	
 	public static void main(String[] args) {
 		SpringApplication.run(MicroserviceOrdersApplication.class, args);

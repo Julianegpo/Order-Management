@@ -12,12 +12,6 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaClient
 @EnableFeignClients
 public class MicroserviceUsersApplication {
-
-	@Bean
-	@LoadBalanced
-	RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
 	
 	public static void main(String[] args) {
 		SpringApplication.run(MicroserviceUsersApplication.class, args);

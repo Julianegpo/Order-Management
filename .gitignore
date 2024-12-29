@@ -235,3 +235,11 @@ microservice-users/logs/service-users.log.2024-12-22.0.gz
 microservice-users/logs/service-users.log.2024-12-23.0.gz
 microservice-users/logs/service-users.log.2024-12-24.0.gz
 microservice-users/src/main/java/com/jegeap/MicroserviceUsersApplication.java
+eureka-server/logs/eureka-server.log.2024-12-28.0.gz
+gateway/logs/app.log.2024-12-14.0.gz
+gateway/logs/gateway.log.2024-12-24.0.gz
+gateway/logs/gateway.log.2024-12-28.0.gz
+gateway/logs/service-gateway.log.2024-12-22.0.gz
+gateway/logs/service-gateway.log.2024-12-23.0.gz
+microservice-auth/logs/service-auth.log.2024-12-28.0.gz
+microservice-users/logs/service-users.log.2024-12-28.0.gz
