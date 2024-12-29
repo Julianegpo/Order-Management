@@ -26,7 +26,6 @@ public class GlobalResponseFilter implements GlobalFilter, Ordered {
 
     @Override
     public int getOrder() {
-        // throw new UnsupportedOperationException("Unimplemented method 'getOrder'");
         return 0;
     }
 
