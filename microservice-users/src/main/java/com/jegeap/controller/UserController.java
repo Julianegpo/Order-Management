@@ -17,7 +17,7 @@ public class UserController {
 
 	@Autowired
 	private UserService service;
-	
+
 	@GetMapping("/{username}")
 	public ResponseEntity<UserDTO> findByUsername(@PathVariable String username) {
 		UserDTO userDTO;
@@ -25,28 +25,28 @@ public class UserController {
 			userDTO = service.findByUsername(username);
 			return new ResponseEntity<UserDTO>(userDTO,
 					userDTO != null
-					? HttpStatus.OK
-					: HttpStatus.NOT_FOUND);
+							? HttpStatus.OK
+							: HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return new ResponseEntity<UserDTO>(HttpStatus.BAD_REQUEST);
 	}
-	
+
 	@PostMapping("/create")
 	public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
 		if (userDTO == null) {
-	        return new ResponseEntity<UserDTO>(HttpStatus.BAD_REQUEST);
-	    } else {
-	        try {
+			return new ResponseEntity<UserDTO>(HttpStatus.BAD_REQUEST);
+		} else {
+			try {
 				return service.createUser(userDTO) != null 
-						? new ResponseEntity<UserDTO>(userDTO, HttpStatus.CREATED) 
+						? new ResponseEntity<UserDTO>(userDTO, HttpStatus.CREATED)
 						: new ResponseEntity<UserDTO>(userDTO, HttpStatus.CONFLICT);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-	    }
+		}
 		return new ResponseEntity<UserDTO>(HttpStatus.BAD_REQUEST);
 	}
-	
+
 }
